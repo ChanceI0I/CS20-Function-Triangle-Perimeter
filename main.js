@@ -16,7 +16,7 @@ function calculate() {
     document.getElementById("AB").innerHTML = dist(xa, xb, ya, yb);   
     document.getElementById("AC").innerHTML = dist(xa, xc, ya, yc);
     document.getElementById("BC").innerHTML = dist(xb, xc, yb, yc);
-    //Add them us and get the perimeter
+    //Add them up and get the perimeter
     document.getElementById("Perimeter").innerHTML = dist(xb, xc, yb, yc)+dist(xa, xc, ya, yc)+dist(xa, xb, ya, yb); 
 }
 
