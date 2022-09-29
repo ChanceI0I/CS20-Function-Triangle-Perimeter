@@ -13,14 +13,20 @@ function calculate() {
     let yc = document.getElementById("yc").value;
 
     //Using dist() get the length for three sides
-    document.getElementById("AB").innerHTML = dist(xa, xb, ya, yb);   
-    document.getElementById("AC").innerHTML = dist(xa, xc, ya, yc);
-    document.getElementById("BC").innerHTML = dist(xb, xc, yb, yc);
+    let AB = dist(xa, ya, xb, yb);
+    let AC = dist(xa, ya, xc, yc);
+    let BC = dist(xb, yb, xc, yc);
+
+    //Change HTML element
+    document.getElementById("AB").innerHTML = AB;   
+    document.getElementById("AC").innerHTML = AC;
+    document.getElementById("BC").innerHTML = BC;
+
     //Add them up and get the perimeter
-    document.getElementById("Perimeter").innerHTML = dist(xb, xc, yb, yc)+dist(xa, xc, ya, yc)+dist(xa, xb, ya, yb); 
+    document.getElementById("Perimeter").innerHTML = AB + AC + BC;
 }
 
-function dist(x1, x2, y1, y2) {
+function dist(x1, y1, x2, y2) {
     //Calculate the distence between given two points
     let distance = Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2))
     return distance
